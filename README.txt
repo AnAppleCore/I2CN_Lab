@@ -17,7 +17,7 @@ Experiment Steps (keep the 5 VMs alive along the whole porcedure):
 
         < python3 client.py >
 
-    5. Input the IP address and port number of server and host on h1 and h2, respectively. Following  the printed texts:
+    5. Input the IP address and port number of server and host on h1 and h2, respectively and almost SIMULTANEOUSLY. Following the printed texts:
 
         Server IP: < server ip address>
         Server Port: < server port number>
@@ -30,7 +30,7 @@ Experiment Steps (keep the 5 VMs alive along the whole porcedure):
             lport   raddr           rport
             xxxxx   xx.xx.xx.xx     xxxx
 
-    7. The dirrect communication between h1 and h2 without server starts, to valid the success of traversal
+    7. The direct communication between h1 and h2 without server starts, to valid the success of traversal
     
         (1) Decide h1 -> h2 or h2 -> h1, by typing 'Y' or 'N'
 
