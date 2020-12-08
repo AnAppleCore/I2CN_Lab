@@ -29,10 +29,10 @@ print('\t',int(clientPort),'\t',ip_addr[0],'\t\t', int(ip_addr[1]))
 # direct communication
 while True:
 	choice = input("Send to the other host? [Y/N]\t")
-	if choice == 'Y' or 'y':
+	if choice == 'Y' or choice =='y':
 		data = input("Input data:\t")
 		sock_c.sendto(data.encode(encoding = "utf-8"), (ip_addr[0], int(ip_addr[1])))
-	elif choice == 'N' or 'n':
+	elif choice == 'N' or choice =='n':
 		print("Listening for packet")
 		data,addr = sock_c.recvfrom(1024)
 		print("Received data:\t",data.decode(encoding = "utf-8"))
