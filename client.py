@@ -21,22 +21,21 @@ ip_addr = data.decode(encoding = "utf-8").split(',')
 sock_c.sendto(b"ACK", (ip_addr[0], int(ip_addr[1])))
 data,addr = sock_c.recvfrom(1024)
 
-# NAT traversal succeed 
-print("---- (lport: %d, raddr: %s, rport: %d) ----"%(int(clientPort),ip_addr[0],int(ip_addr[1])))
+# NAT traversal succeed
+print(' -----Traversal succeed!----- ')
+print('\tlport\traddr\t\t\trport')
+print('\t',int(clientPort),'\t',ip_addr[0],'\t\t', int(ip_addr[1]))
 
 # direct communication
 while True:
-	choice = input("To send(0) or to listen(1)? : ")
-	try:
-		choice=int(choice)
-		if choice == 0:
-			msg = input("Input message:")
-			sock_c.sendto(msg.encode(encoding = "utf-8"), (ip_addr[0], int(ip_addr[1])))
-		elif choice == 1:
-			print("Listening...")
-			data,addr = sock_c.recvfrom(1024)
-			print("Get message [",data.decode(encoding = "utf-8"),"] from addr ", addr[0])
-		else:
-			print("Invalid, input 0 or 1")
-	except:
-		print("Invalid, input 0 or 1")
+	choice = input("Send to the other host? [Y/N]\t")
+	if choice == 'Y' or 'y':
+		data = input("Input data:\t")
+		sock_c.sendto(data.encode(encoding = "utf-8"), (ip_addr[0], int(ip_addr[1])))
+	elif choice == 'N' or 'n':
+		print("Listening for packet")
+		data,addr = sock_c.recvfrom(1024)
+		print("Received data:\t",data.decode(encoding = "utf-8"))
+		print('\t from IP: ', addr[0])
+	else:
+		print('Please try again ... ')
