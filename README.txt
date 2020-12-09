@@ -24,7 +24,7 @@ Experiment Steps (keep the 5 VMs alive along the whole porcedure):
         Client IP: < host ip address in the (r, h) subnet>
         Client Port: < host port number>
 
-    6. Then if the following line is printed, the traversal succeeds:
+    6. Then if the following line is printed on both side of hosts, the traversal succeeds:
 
          -----Traversal succeed!----- 
             lport   raddr           rport
