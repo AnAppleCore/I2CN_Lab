@@ -36,8 +36,8 @@ ip link set veth23 netns ns02
 
 ip netns exec ns02 ip addr add 10.0.0.4 peer 10.0.0.3 dev veth21
 ip netns exec ns02 ifconfig veth21 up
-ip netns exec ns01 ip addr add 10.0.0.5 peer 10.0.0.6 dev veth23
-ip netns exec ns01 ifconfig veth23 up
+ip netns exec ns02 ip addr add 10.0.0.5 peer 10.0.0.6 dev veth23
+ip netns exec ns02 ifconfig veth23 up
 
 ip netns exec ns02 sysctl net.ipv4.ip_forward=1
 ip netns exec ns02 iptables -t nat -A POSTROUTING -o veth23 -j MASQUERADE
