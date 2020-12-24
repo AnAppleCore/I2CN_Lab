@@ -23,7 +23,7 @@ ip link add veth23 type veth peer name veth32
 ip addr add 10.0.0.1 peer 10.0.0.2 dev veth01
 ifconfig veth01 up
 
-# ip route add 10.0.0.4 via 10.0.0.2
+ip route add 10.0.0.4 via 10.0.0.2
 ip route add 10.0.0.6 via 10.0.0.2
 
 # ns01
