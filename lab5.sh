@@ -17,7 +17,7 @@ ip link add veth12 type veth peer name veth21
 ip link add veth23 type veth peer name veth32
 
 ################################################################
-####### assign veths to namespaces and set ip addresses ########
+###### assign veths to namespaces, set ip addresses, ... #######
 
 # default ns
 ip addr add 10.0.0.1 peer 10.0.0.2 dev veth01
