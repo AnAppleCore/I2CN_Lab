@@ -52,3 +52,7 @@ ip netns exec ns03 ifconfig veth32 up
 ################################################################
 ############################ test ##############################
 traceroute 10.0.0.6
+
+ip netns del ns01
+ip netns del ns02
+ip netns del ns03
