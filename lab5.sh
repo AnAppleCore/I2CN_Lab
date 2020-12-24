@@ -1,11 +1,17 @@
 ################################################################
-########## create namespaces
+###################### clear namespaces #######################
+ip netns del ns01
+ip netns del ns02
+ip netns del ns03
+
+################################################################
+###################### create namespaces #######################
 ip netns add ns01
 ip netns add ns02
 ip netns add ns03
 
 ################################################################
-###### create pairs of veths
+#################### create pairs of veths ####################
 ip link add veth01 type veth peer name veth10
 ip link add veth12 type veth peer name veth21
 ip link add veth23 type veth peer name veth32
@@ -52,7 +58,3 @@ ip netns exec ns03 ifconfig veth32 up
 ################################################################
 ############################ test ##############################
 traceroute 10.0.0.6
-
-ip netns del ns01
-ip netns del ns02
-ip netns del ns03
