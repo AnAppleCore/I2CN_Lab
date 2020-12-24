@@ -47,7 +47,6 @@ ip netns exec ns02 ifconfig veth23 up
 
 ip netns exec ns02 sysctl net.ipv4.ip_forward=1
 ip netns exec ns02 iptables -t nat -A POSTROUTING -o veth23 -j MASQUERADE
-ip route add 10.0.0.6 via 10.0.0.2
 ip route add 10.0.0.6 via 10.0.0.4
 
 # ns03 
