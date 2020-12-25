@@ -78,39 +78,16 @@ the test image to produce the ascii art, which has size 500x500
 
 ## dependecies:
 
-In the vitual machines lab5-A and lab5-B, all the corresponding packages need to be installed:
+In the vitual machines lab5-A and lab5-B, all the corresponding packages have been installed:
 
-### (1) install dnsmasq
+### (1) install dnsmasq on host A
 ### (2) install traceroute
 ### (3) install python3 and numpy, PIL packages
 
-## step 1 change the dnsmasq configuration on host A:
+## step 1 run the following command on host A as root
 
-### (1) make sure the addn-hosts is lab5.hosts by adding the following line to /etc/dnsmasq.conf
+    sh /home/aac/I2CN_lab/lab5_A.sh
 
-    addn-hosts=/home/aac/I2CN_lab/lab5.hosts
+## step 2 traceroute on host B, run the following command on host B as root
 
-### (2) make sure the listen address is A's ip by adding the following line to /etc/dnsmasq.conf (10.0.1.1 is host A's ip in host-only nework)
-
-    listen-address=127.0.0.1, 10.0.1.1
-
-### (3) make sure the nameserver is 127.0.0.1 by changing the following line to /etc/resolv.conf
-
-    nameserver=127.0.0.1
-
-### (4) restart dnsmasq
-
-    systemctl restart dnsmasq
-
-### (5) if the port 53 is already is use, manually stop system-resolved
-
-
-## step 2 traceroute on host B
-
-### (1) make sure the nameserver is A'ip in host-only network by changing the following line to /etc/resolv.conf
-
-    namerserver=10.0.1.1
-
-### (2) executing the script lab5_B.sh, in which the following lines will be executed:
-
-    traceroute 10.0.0.68 -m 34 -z 0.1
+    sh /home/aac/I2CN_lab/lab5_B.sh
