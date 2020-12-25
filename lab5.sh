@@ -60,8 +60,7 @@ ip netns exec ns03 ifconfig veth32 up
 
 ################################################################
 ###################### dnsmasq settings ########################
-cp /etc/dnsmasq.conf /home/aac/I2CN_lab/dnsmasq_last.conf
-cp /home/aac/I2CN_lab/lab5_dnsmasq.conf /etc/dnsmasq.conf
+cp /home/aac/I2CN_lab/lab5.hosts /etc/hosts
 
 systemctl restart dnsmasq
 dnsmasq --test
