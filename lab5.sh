@@ -1,5 +1,5 @@
 ################################################################
-###################### clear namespaces #######################
+###################### clear namespaces ########################
 ip netns del ns01
 ip netns del ns02
 ip netns del ns03
@@ -13,7 +13,7 @@ ip netns add ns03
 ip netns add ns04
 
 ################################################################
-#################### create pairs of veths ####################
+#################### create pairs of veths #####################
 ip link add veth01 type veth peer name veth10
 ip link add veth12 type veth peer name veth21
 ip link add veth23 type veth peer name veth32
