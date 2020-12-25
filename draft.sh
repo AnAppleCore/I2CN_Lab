@@ -1015,8 +1015,14 @@ python3 img2ascii.py --file test.jpg --out out.txt --cols=36 -c --morelevels
 
 ################################################################
 ####################### hosts settings #########################
-cp /home/aac/I2CN_lab/lab5.hosts /etc/hosts
+cp /etc/dnsmasq.conf /home/aac/I2CN_lab/default_dnsmasq.conf 
+cp /home/aac/I2CN_lab/lab5_dnsmasq.conf /etc/dnsmasq.conf
 
 ################################################################
 ############################ test ##############################
 traceroute 10.0.0.68
+
+
+################################################################
+########################### clean ##############################
+cp /home/aac/I2CN_lab/default_dnsmasq.conf /etc/dnsmasq.conf
