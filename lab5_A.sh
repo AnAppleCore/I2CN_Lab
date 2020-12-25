@@ -1008,3 +1008,15 @@ ip netns exec ns033 iptables -t nat -A POSTROUTING -o veth3334 -j MASQUERADE
 ip link set veth3433 netns ns034
 ip netns exec ns034 ip addr add 10.0.0.68 peer 10.0.0.67 dev veth3433
 ip netns exec ns034 ifconfig veth3433 up
+
+
+################################################################
+################### host-only network setting ##################
+ip addr add 10.0.1.1/24 dev enp0s8
+ifonfig enp0s8 up
+sysctl net.ipv4.ip_forward=1
+iptables -t nat -A POSTROUTING -o veth01 -j MASQUERADE
+
+################################################################
+############################# test #############################
+traceroute 10.0.0.68 -m 34 -z 0.1
