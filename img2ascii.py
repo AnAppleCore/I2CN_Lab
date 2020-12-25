@@ -49,8 +49,9 @@ def covertImageToAscii(fileName, cols, scale, moreLevels):
                 gsval = gscale1[int((avg * 33) / 255)]
             else:
                 gsval = gscale2[int((avg * 7) / 255)]
-            aimg[j] += gsval
-        aimg[j] += ".1"
+            # aimg[j] += gsval
+            aimg[j] += "1."
+        aimg[j] += "1"
     return aimg
 
 
