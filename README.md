@@ -47,7 +47,7 @@
 
 # Lab 5 Experiment steps (keep 2 VMs alive along the whole porcedure):
 
-Maker sure that hosts A (dns) and B (test) are connected by a host-only network and all the following steps must be executed as root. In virtual machines A, all the code files and scripts are included in the directory: /home/aac/I2CN_lab/ . One can simple git clone this reposiroty to the target directory. Here's a brief introduction to the files:
+Maker sure that hosts A (dns) and B (test) are connected by a host-only network and all the following steps must be executed as root. In virtual machines A and B, all the code files and scripts are included in the directory: /home/aac/I2CN_lab/ . One can simple git clone this reposiroty to the target directory. Here's a brief introduction to the files:
 
 ### img2ascii.py: 
 
@@ -60,13 +60,17 @@ One can run this script by executing:
 
 specify the name for each ip address
 
-### lab5.sh: 
+### lab5_A.sh: 
 
 the script to run on the hosts A, in which the chain is built up
 
+### lab5_B.sh: 
+
+the script to run on the hosts A, in which the traceroute command is executed
+
 ### script.py
 
-the script to produce lab5.sh
+the script to produce lab5_A.sh
 
 ### test.jpg
 
@@ -74,7 +78,7 @@ the test image to produce the ascii art, whish has size 500x500
 
 ## dependecies:
 
-In the virutal machines A, all the corresponding packages have be installed succesfully, so one can just ignored them safely. 
+In the virutal machines lab5-A and lab5-B, all the corresponding packages need to be installed:
 
 ### (1) install dnsmasq
 ### (2) install traceroute
@@ -86,9 +90,9 @@ In the virutal machines A, all the corresponding packages have be installed succ
 
     addn-hosts=/home/aac/I2CN_lab/lab5.hosts
 
-### (2) make sure the listen address is A's ip by adding the following line to /etc/dnsmasq.conf
+### (2) make sure the listen address is A's ip by adding the following line to /etc/dnsmasq.conf (10.0.1.1 is host A's ip in host-only nework)
 
-    listen-address=127.0.0.1, <host A's ip in host-only nework>
+    listen-address=127.0.0.1, 10.0.1.1
 
 ### (3) make sure the nameserver is 127.0.0.1 by changing the following line to /etc/resolv.conf
 
@@ -105,8 +109,8 @@ In the virutal machines A, all the corresponding packages have be installed succ
 
 ### (1) make sure the nameserver is A'ip in host-only network by changing the following line to /etc/resolv.conf
 
-    namerserver=<host A's ip in host-only nework>
+    namerserver=10.0.1.1
 
-### (2) executing the following line:
+### (2) executing the script lab5_B.sh, in which the following line will be executed:
 
     traceroute 10.0.0.68 -m 34 -z 0.1
