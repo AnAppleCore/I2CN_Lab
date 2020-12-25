@@ -78,6 +78,10 @@ ip netns exec ns04 ip addr add 10.0.0.8 peer 10.0.0.7 dev veth43
 ip netns exec ns04 ifconfig veth43 up
 
 ################################################################
+####################### ASCII settings #########################
+python3 img2ascii.py --file test.jpg --out out.txt --cols=36 -c --morelevels 
+
+################################################################
 ####################### hosts settings #########################
 cp /home/aac/I2CN_lab/lab5.hosts /etc/hosts
 
