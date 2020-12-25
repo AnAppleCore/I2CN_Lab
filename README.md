@@ -47,7 +47,7 @@
 
 # Lab 5 Experiment steps (keep 2 VMs alive along the whole porcedure):
 
-Maker sure that hosts A (dns) and B are connected by a host-only network and all the following steps must be executed as root. In virtual machines A, all the code files and scripts are included in the directory: /home/aac/I2CN_lab/ . One can simple git clone this reposiroty to the target directory. Here's a brief introduction to the files:
+Maker sure that hosts A (dns) and B (test) are connected by a host-only network and all the following steps must be executed as root. In virtual machines A, all the code files and scripts are included in the directory: /home/aac/I2CN_lab/ . One can simple git clone this reposiroty to the target directory. Here's a brief introduction to the files:
 
 ### img2ascii.py: 
 
