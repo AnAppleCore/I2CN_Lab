@@ -59,11 +59,8 @@ ip netns exec ns03 ip addr add 10.0.0.6 peer 10.0.0.5 dev veth32
 ip netns exec ns03 ifconfig veth32 up
 
 ################################################################
-###################### dnsmasq settings ########################
+####################### hosts settings #########################
 cp /home/aac/I2CN_lab/lab5.hosts /etc/hosts
-
-systemctl restart dnsmasq
-dnsmasq --test
 
 ################################################################
 ############################ test ##############################
