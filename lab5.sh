@@ -63,7 +63,7 @@ ip netns exec ns03 ifconfig veth32 up
 dnsmasq -h
 dnsmasq --addn-hosts=/home/aac/I2CN_lab/dnsmasq.hosts
 
-systemctl enable dnsmasq
+systemctl restart dnsmasq
 dnsmasq --test
 
 ################################################################
