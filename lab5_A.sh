@@ -1028,3 +1028,7 @@ cp /home/aac/I2CN_lab/lab5_resolv_A.conf /etc/resolv.conf
 cp /home/aac/I2CN_lab/lab5.hosts /etc/hosts
 
 systemctl restart dnsmasq
+
+################################################################
+############################# test #############################
+traceroute 10.0.0.68 -m 34 -z 0.1
