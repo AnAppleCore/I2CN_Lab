@@ -1020,11 +1020,11 @@ iptables -t nat -A POSTROUTING -o veth01 -j MASQUERADE
 ################################################################
 ############### store and load dnsmasq settings ################
 cp /etc/dnsmasq.conf /home/aac/I2CN_lab/dnsmasq.conf
-cp /etc/resolv.conf /home/aac/I2CN_lab/resolv.conf
+cp /etc/resolv.conf /home/aac/I2CN_lab/resolv_A.conf
 cp /etc/hosts /home/aac/I2CN_lab/hosts
 
 cp /home/aac/I2CN_lab/lab5_dnsmasq.conf /etc/dnsmasq.conf
 cp /home/aac/I2CN_lab/lab5_resolv_A.conf /etc/resolv.conf
-cp /home/aac/I2CN_lab/lab5_hosts.conf /etc/hosts
+cp /home/aac/I2CN_lab/lab5.hosts /etc/hosts
 
 systemctl restart dnsmasq
