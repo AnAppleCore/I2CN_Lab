@@ -47,7 +47,7 @@
 
 # Lab 5 Experiment steps (keep 2 VMs alive along the whole porcedure):
 
-Maker sure that hosts A and B are connected by a host-only network and all the following steps must be executed as root. In virtual machines A and B, all the code files and scripts are included in the directory: /home/aac/I2CN_lab/ . One can simple git clone this reposiroty to the target directory. Here's a brief introduction to the files:
+Maker sure that hosts A (dns) and B are connected by a host-only network and all the following steps must be executed as root. In virtual machines A, all the code files and scripts are included in the directory: /home/aac/I2CN_lab/ . One can simple git clone this reposiroty to the target directory. Here's a brief introduction to the files:
 
 ### img2ascii.py: 
 
@@ -60,17 +60,13 @@ One can run this script by executing:
 
 specify the name for each ip address
 
-### lab5_A.sh: 
+### lab5.sh: 
 
 the script to run on the hosts A, in which the chain is built up
 
-### lab5_B.sh: 
-
-the script to run on the hosts A, in which the traceroute command is executed
-
 ### script.py
 
-the script to produce lab5_A.sh
+the script to produce lab5.sh
 
 ### test.jpg
 
@@ -78,7 +74,7 @@ the test image to produce the ascii art, whish has size 500x500
 
 ## dependecies:
 
-In the virutal machines lab5-A and lab5-B, all the corresponding packages have be installed succesfully, so one can just ignored them safely. 
+In the virutal machines A, all the corresponding packages have be installed succesfully, so one can just ignored them safely. 
 
 ### (1) install dnsmasq
 ### (2) install traceroute
@@ -111,6 +107,6 @@ In the virutal machines lab5-A and lab5-B, all the corresponding packages have b
 
     namerserver=<host A's ip in host-only nework>
 
-### (2) executing the script lab5_B.sh, in which the following line is executed:
+### (2) executing the following line:
 
     traceroute 10.0.0.68 -m 34 -z 0.1
