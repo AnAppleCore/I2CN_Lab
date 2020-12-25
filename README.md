@@ -1,4 +1,4 @@
-Experiment Steps (keep the 5 VMs alive along the whole porcedure):
+Lab 4 Experiment Steps (keep the 5 VMs alive along the whole porcedure):
 
     1. put the code files client.py and server.py on VM h1, h2, and server, respectively. Or simply download the code files by git:
 
