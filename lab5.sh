@@ -1010,18 +1010,5 @@ ip netns exec ns034 ip addr add 10.0.0.68 peer 10.0.0.67 dev veth3433
 ip netns exec ns034 ifconfig veth3433 up
 
 ################################################################
-####################### ASCII settings #########################
-# python3 img2ascii.py --file test.jpg --out out.txt --cols=36 -c --morelevels 
-
-################################################################
-####################### hosts settings #########################
-cp /etc/dnsmasq.conf /home/aac/I2CN_lab/default_dnsmasq.conf 
-cp /home/aac/I2CN_lab/lab5_dnsmasq.conf /etc/dnsmasq.conf
-
-################################################################
 ############################ test ##############################
-traceroute 10.0.0.68
-
-################################################################
-########################### clean ##############################
-cp /home/aac/I2CN_lab/default_dnsmasq.conf /etc/dnsmasq.conf
+traceroute 10.0.0.68 -m 68
