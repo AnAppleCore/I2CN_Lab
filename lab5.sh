@@ -58,6 +58,12 @@ ip link set veth32 netns ns03
 ip netns exec ns03 ip addr add 10.0.0.6 peer 10.0.0.5 dev veth32
 ip netns exec ns03 ifconfig veth32 up
 
+################################################################
+###################### dnsmasq settings ########################
+dnsmasq -h
+dnsmasq --addn-hosts=/home/aac/I2CN_lab/dnsmasq.hosts
+
+systemctl enable dnsmasq
 
 ################################################################
 ############################ test ##############################
