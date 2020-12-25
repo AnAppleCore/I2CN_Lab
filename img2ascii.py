@@ -5,7 +5,8 @@ import math
 
 from PIL import Image
 
-gscale1 = "B8WMoahkbdpqwmZO0QLCJUYXzcvunxrjft1il"
+# gscale1 = "B8WMoahkbdpqwmZO0QLCJUYXzcvunxrjft1il"
+gscale1 = ['B8', 'WM', 'oa', 'hk', 'bd', 'pq', 'wm', 'ZO', '0Q', 'LC', 'JU', 'YX', 'zc', 'vu', 'nx', 'rj', 'ft', '1i', 'l.']
 
 gscale2 = 'nxrjft1il'
 
@@ -46,12 +47,10 @@ def covertImageToAscii(fileName, cols, scale, moreLevels):
             img = image.crop((x1, y1, x2, y2))
             avg = int(getAverageL(img))
             if moreLevels:
-                gsval = gscale1[int((avg * 36) / 255)]
+                gsval = gscale1[int((avg * 18) / 255)]
             else:
                 gsval = gscale2[int((avg * 8) / 255)]
             aimg[j] += gsval
-            if i % 10 == 0:
-                aimg[j] += '.'
     return aimg
 
 
@@ -73,10 +72,10 @@ def main():
     outhostsfile = 'lab5.hosts'
     if args.outFile:
         outFile = args.outFile
-    scale = 0.43
+    scale = 0.86
     if args.scale:
         scale = float(args.scale)
-    cols = 80
+    cols = 40
     if args.cols:
         cols = int(args.cols)
 
