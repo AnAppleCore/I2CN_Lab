@@ -5,9 +5,9 @@ import math
 
 from PIL import Image
 
-gscale1 = "B8WMoahkbdpqwmZO0QLCJUYXzcvunxrjft1i"
+gscale1 = "BWMoahkbdpqwmZO0QLCJUYXzcvunxrjfti"
 
-gscale2 = 'unxrjft1i'
+gscale2 = 'unxrjfti'
 
 
 def getAverageL(image):
@@ -46,11 +46,11 @@ def covertImageToAscii(fileName, cols, scale, moreLevels):
             img = image.crop((x1, y1, x2, y2))
             avg = int(getAverageL(img))
             if moreLevels:
-                gsval = gscale1[int((avg * 35) / 255)]
+                gsval = gscale1[int((avg * 33) / 255)]
             else:
-                gsval = gscale2[int((avg * 8) / 255)]
+                gsval = gscale2[int((avg * 7) / 255)]
             aimg[j] += gsval
-        aimg[j] += '.1'
+        aimg[j] += ".1"
     return aimg
 
 
