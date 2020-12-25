@@ -111,6 +111,6 @@ In the virutal machines lab5-A and lab5-B, all the corresponding packages need t
 
     namerserver=10.0.1.1
 
-### (2) executing the script lab5_B.sh, in which the following line will be executed:
+### (2) executing the script lab5_B.sh, in which the following lines will be executed:
 
     traceroute 10.0.0.68 -m 34 -z 0.1
