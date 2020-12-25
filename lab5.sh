@@ -61,6 +61,7 @@ ip netns exec ns02 ip route add 10.0.0.8 via 10.0.0.6
 
 # ns03 
 ip link set veth32 netns ns03
+ip link set veth34 netns ns03
 
 ip netns exec ns03 ip addr add 10.0.0.6 peer 10.0.0.5 dev veth32
 ip netns exec ns03 ifconfig veth32 up
