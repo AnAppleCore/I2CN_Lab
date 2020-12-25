@@ -146,47 +146,47 @@ ip route add 10.0.0.64 via 10.0.0.2
 ip route add 10.0.0.66 via 10.0.0.2
 ip route add 10.0.0.68 via 10.0.0.2
 
-# # ns01
-# ip link set veth10 netns ns01
-# ip link set veth12 netns ns01
-# ip netns exec ns01 ip addr add 10.0.0.2 peer 10.0.0.1 dev veth10
-# ip netns exec ns01 ifconfig veth10 up
-# ip netns exec ns01 ip addr add 10.0.0.3 peer 10.0.0.4 dev veth12
-# ip netns exec ns01 ifconfig veth10 up
-# ip netns exec ns01 sysctl net.ipv4.ip_forward=1
-# ip netns exec ns01 iptables -t nat -A POSTROUTING -o veth12 -j MASQUERADE
-# ip netns exec ns01 ip route add 10.0.0.6 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.8 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.10 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.12 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.14 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.16 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.18 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.20 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.22 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.24 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.26 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.28 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.30 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.32 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.34 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.36 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.38 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.40 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.42 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.44 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.46 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.48 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.50 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.52 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.54 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.56 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.58 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.60 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.62 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.64 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.66 via 10.0.0.4
-# ip netns exec ns01 ip route add 10.0.0.68 via 10.0.0.4
+# ns01
+ip link set veth10 netns ns01
+ip link set veth12 netns ns01
+ip netns exec ns01 ip addr add 10.0.0.2 peer 10.0.0.1 dev veth10
+ip netns exec ns01 ifconfig veth10 up
+ip netns exec ns01 ip addr add 10.0.0.3 peer 10.0.0.4 dev veth12
+ip netns exec ns01 ifconfig veth10 up
+ip netns exec ns01 sysctl net.ipv4.ip_forward=1
+ip netns exec ns01 iptables -t nat -A POSTROUTING -o veth12 -j MASQUERADE
+ip netns exec ns01 ip route add 10.0.0.6 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.8 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.10 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.12 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.14 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.16 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.18 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.20 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.22 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.24 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.26 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.28 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.30 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.32 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.34 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.36 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.38 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.40 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.42 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.44 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.46 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.48 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.50 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.52 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.54 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.56 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.58 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.60 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.62 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.64 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.66 via 10.0.0.4
+ip netns exec ns01 ip route add 10.0.0.68 via 10.0.0.4
 
 # # ns02
 # ip link set veth21 netns ns02
