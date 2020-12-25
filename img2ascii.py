@@ -20,15 +20,15 @@ def covertImageToAscii(fileName, cols, scale, moreLevels):
     global gscale1, gscale2
     image = Image.open(fileName).convert('L')
     W, H = image.size[0], image.size[1]
-    print("图像宽高: %dx%d" % (W, H))
+    print("image width x height: %dx%d" % (W, H))
     w = W / cols
     h = w / scale
     rows = int(H / h)
-    print("共有%d行 %d列小块" % (rows,cols))
-    print("每一小块宽高: %dx%d" % (w, h))
+    print("\t%d rows %d columns" % (rows,cols))
+    print("block width x height: %dx%d" % (w, h))
 
     if cols > W or rows > H:
-        print("图像太小不足分割！（提高图像分辨率或降低精细度）")
+        print("image too small!")
         exit(0)
 
     aimg = []
@@ -54,7 +54,7 @@ def covertImageToAscii(fileName, cols, scale, moreLevels):
 
 
 def main():
-    descStr = "Python实现图片转ASCII图形"
+    descStr = "python image 2 ASCII"
     parser = argparse.ArgumentParser(description=descStr)
 
     parser.add_argument('--file', dest='imgFile', required=True)
@@ -78,16 +78,15 @@ def main():
     if args.cols:
         cols = int(args.cols)
 
-    print("转换中...")
     aimg = covertImageToAscii(imgFile, cols, scale, args.moreLevels)
 
     f = open(outFile, 'w')
     for row in aimg:
         f.write(row + '\n')
     f.close()
-    print("ASCII文本图形存储于%s" % outFile)
+    print("ASCII text stored in %s" % outFile)
     if args.covert2hosts:
-        outhostsfile = 'lab5.hosts'
+        OutHostsFile = 'lab5.hosts'
         with open(outhostsfile, 'w') as f:
             f.write('127.0.0.1\tlocalhost\n')
             f.write('127.0.0.1\tI2CN\n')
@@ -96,14 +95,7 @@ def main():
             f.write('::1\tlocalhost ip6-localhost ip6-loopback\n')
             f.write('ff02::1\tip6-allnodes\n')
             f.write('ff02::2\tip6-allrouters\n')
+        print('Processed hosts file:', OutHostsFile)
 
 if __name__ == '__main__':
     main()
-
-#Pycharm设置命令行参数运行方法：Run→Run→Edit Configurations→Defaults→Python→右边的Parameters
-#必填：输入图片路径--file test.jpg
-#选填：
-#（推荐）图片分割小块列数--cols 100
-#输出ASCII文本图形路径--out out.txt
-#垂直比例系数--scale 1
-#使用70级灰度梯度--morelevels
