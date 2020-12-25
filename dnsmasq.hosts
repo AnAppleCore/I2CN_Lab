@@ -1,5 +1,8 @@
 127.0.0.1	localhost
 127.0.1.1	I2CN
+10.0.0.2    6666666
+10.0.0.4    6666666
+10.0.0.6    6666666
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
