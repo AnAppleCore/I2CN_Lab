@@ -1025,7 +1025,7 @@ cp /etc/hosts /home/aac/I2CN_lab/hosts
 
 cp /home/aac/I2CN_lab/lab5_dnsmasq.conf /etc/dnsmasq.conf
 cp /home/aac/I2CN_lab/lab5_resolv_A.conf /etc/resolv.conf
-cp /home/aac/I2CN_lab/lab5_hosts /etc/hosts
+cp /home/aac/I2CN_lab/lab5.hosts /etc/hosts
 
 systemctl restart dnsmasq
 
