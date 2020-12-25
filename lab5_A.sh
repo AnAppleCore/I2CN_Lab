@@ -1016,3 +1016,15 @@ ip addr add 10.0.1.1/24 dev enp0s8
 ifconfig enp0s8 up
 sysctl net.ipv4.ip_forward=1
 iptables -t nat -A POSTROUTING -o veth01 -j MASQUERADE
+
+################################################################
+############### store and load dnsmasq settings ################
+cp /etc/dnsmasq.conf /home/aac/I2CN_lab/dnsmasq.conf
+cp /etc/resolv.conf /home/aac/I2CN_lab/resolv.conf
+cp /etc/hosts /home/aac/I2CN_lab/hosts
+
+cp /home/aac/I2CN_lab/lab5_dnsmasq.conf /etc/dnsmasq.conf
+cp /home/aac/I2CN_lab/lab5_resolv_A.conf /etc/resolv.conf
+cp /home/aac/I2CN_lab/lab5_hosts.conf /etc/hosts
+
+systemctl restart dnsmasq
