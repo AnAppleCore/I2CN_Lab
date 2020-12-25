@@ -66,7 +66,7 @@ the script to run on the hosts A, in which the chain is built up
 
 ### lab5_B.sh: 
 
-the script to run on the hosts A, in which the traceroute command is executed
+the script to run on the hosts B, in which the traceroute command is executed
 
 ### script.py
 
@@ -74,11 +74,11 @@ the script to produce lab5_A.sh
 
 ### test.jpg
 
-the test image to produce the ascii art, whish has size 500x500
+the test image to produce the ascii art, which has size 500x500
 
 ## dependecies:
 
-In the virutal machines lab5-A and lab5-B, all the corresponding packages need to be installed:
+In the vitual machines lab5-A and lab5-B, all the corresponding packages need to be installed:
 
 ### (1) install dnsmasq
 ### (2) install traceroute
