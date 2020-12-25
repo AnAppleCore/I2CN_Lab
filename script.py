@@ -30,7 +30,7 @@ with open('draft.sh', 'w') as f:
         f.write('ip netns exec ns0'+str(j)+' ip addr add 10.0.0.'+str(2*j)+' peer 10.0.0.'+str(2*j-1)+' dev veth'+str(j)+str(i)+'\n')
         f.write('ip netns exec ns0'+str(j)+' ifconfig veth'+str(j)+str(i)+' up\n')
         f.write('ip netns exec ns0'+str(j)+' ip addr add 10.0.0.'+str(2*j+1)+' peer 10.0.0.'+str(2*j+2)+' dev veth'+str(j)+str(j+1)+'\n')
-        f.write('ip netns exec ns0'+str(j)+' ifconfig veth'+str(j)+str(i)+' up\n')
+        f.write('ip netns exec ns0'+str(j)+' ifconfig veth'+str(j)+str(j+1)+' up\n')
 
         f.write('ip netns exec ns0'+str(j)+' sysctl net.ipv4.ip_forward=1\n')
         f.write('ip netns exec ns0'+str(j)+' iptables -t nat -A POSTROUTING -o veth'+str(j)+str(j+1)+' -j MASQUERADE\n')
