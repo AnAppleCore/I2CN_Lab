@@ -64,6 +64,7 @@ dnsmasq -h
 dnsmasq --addn-hosts=/home/aac/I2CN_lab/dnsmasq.hosts
 
 systemctl enable dnsmasq
+dnsmasq --test
 
 ################################################################
 ############################ test ##############################
