@@ -1008,7 +1008,3 @@ ip netns exec ns033 iptables -t nat -A POSTROUTING -o veth3334 -j MASQUERADE
 ip link set veth3433 netns ns034
 ip netns exec ns034 ip addr add 10.0.0.68 peer 10.0.0.67 dev veth3433
 ip netns exec ns034 ifconfig veth3433 up
-
-################################################################
-############################ test ##############################
-traceroute 10.0.0.68 -m 34 -z 0.1
