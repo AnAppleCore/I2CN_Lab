@@ -1,5 +1,9 @@
 # Lab 4 Experiment Steps (keep the 5 VMs alive along the whole porcedure):
 
+[//]: # (Image References)
+[resultA]: result_A.png "result on VM A"
+[resultB]: result_B.png "result on VM B"
+
 ## 1. put the code files client.py and server.py on VM h1, h2, and server, respectively. Or simply download the code files by git:
 
     git clone https://github.com/AnAppleCore/I2CN_lab.git
@@ -94,3 +98,8 @@ In the vitual machines lab5-A and lab5-B, all the corresponding packages have be
     
 ## step 3 if everything gose well, the following result can be seen on both A and B:
 
+![alt image][resultA]
+>figure 1 result on VM A
+
+![alt image][resultB]
+>figure 2 result on VM B
