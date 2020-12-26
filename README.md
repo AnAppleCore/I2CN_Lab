@@ -47,7 +47,7 @@
 
 # Lab 5 Experiment steps (keep 2 VMs alive along the whole porcedure):
 
-Maker sure that hosts A (dns) and B (test) are connected by a host-only network and all the following steps must be executed as root. In virtual machines A and B, all the code files and scripts are included in the directory: /home/aac/I2CN_lab/ . One can simple git clone this reposiroty to the target directory. Here's a brief introduction to the files:
+Maker sure that hosts A (dns) and B (test) are connected by a host-only network and all the following steps must be executed as root. In virtual machines A and B, all the code files and scripts are included in the directory: /home/aac/I2CN_lab/ . One can simply git clone this reposiroty to the target directory. Here's a brief introduction to the files:
 
 ### img2ascii.py: 
 
@@ -82,7 +82,7 @@ In the vitual machines lab5-A and lab5-B, all the corresponding packages have be
 
 ### (1) install dnsmasq on host A
 ### (2) install traceroute
-### (3) install python3 and numpy, PIL packages
+### (3) install python3 and numpy, PIL packages (these are needed when running img2ascii.py)
 
 ## step 1 run the following command on host A as root
 
@@ -91,3 +91,6 @@ In the vitual machines lab5-A and lab5-B, all the corresponding packages have be
 ## step 2 traceroute on host B, run the following command on host B as root
 
     sh /home/aac/I2CN_lab/lab5_B.sh
+    
+## step 3 if everything gose well, the following result can be seen on both A and B:
+
